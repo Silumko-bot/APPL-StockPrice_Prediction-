@@ -90,7 +90,7 @@ LSTM Neural Network: Models complex, nonlinear, and sequential dependencies in t
 
 Hybrid Model: Final prediction is the sum of Linear Regression output and LSTM-predicted residuals, leveraging strengths of both approaches.
 
-Evaluation Metrics
+# Evaluation Metrics
 Mean Squared Error (MSE)
 
 Mean Absolute Error (MAE)
@@ -99,12 +99,12 @@ Mean Absolute Percentage Error (MAPE)
 
 These metrics are used to assess and compare the predictive accuracy of each model component and the hybrid model.
 
-Results
+# Results
 The hybrid model demonstrates improved accuracy over standalone models by effectively capturing both linear and nonlinear patterns in the stock price data.
 
 Visualizations and error metrics are provided in the notebook to illustrate performance gains.
 
-How to Run
+# How to Run
 Clone the Repository and navigate to the project directory.
 
 Install Dependencies (see below).
