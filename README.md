@@ -1,140 +1,83 @@
-
-# Apple Stock Price Prediction: Hybrid Machine Learning Approach
-
 # Overview
+This project demonstrates an end-to-end approach to forecasting Apple Inc. (AAPL) closing stock prices by combining classical and deep learning techniques. The hybrid model leverages both Linear Regression and a Long Short-Term Memory (LSTM) neural network to capture linear trends and complex nonlinear patterns in historical stock data. The goal is to provide robust, accurate short-term price predictions for use in financial analysis and trading strategies.
 
-This project aims to predict the short-term closing price of Apple Inc. (AAPL) stock using a hybrid machine learning model. By combining a traditional Linear Regression model with a Long Short-Term Memory (LSTM) neural network trained on the residuals, the project seeks to capture both linear and nonlinear patterns in the time series data. The goal is to evaluate whether this hybrid approach can outperform standalone models in forecasting stock price movements.
+# Objective
+Develop a hybrid machine learning model that accurately predicts Apple’s daily closing stock price by integrating Linear Regression (for linear trends) and LSTM (for nonlinear residuals). Evaluate the model’s predictive performance and visualize its effectiveness, providing actionable insights for investors and analysts.
 
-# Table of Contents :
+# Motivation
+Stock price prediction is a critical task in quantitative finance, with direct applications in trading, risk management, and investment decision-making. Traditional models often struggle to capture the complex, nonlinear behavior of financial time series. This project explores whether a hybrid approach can deliver superior accuracy and reliability, making it a valuable tool for real-world financial forecasting.
 
-Objective
+# Data
+Source: Historical daily price data for Apple Inc. (AAPL)
 
-Data
+Features: Date, Open, High, Low, Close, Volume
 
-Project Workflow
+Engineered Features: Lagged closing prices (close_lag1, close_lag2, close_lag3) to capture short-term dependencies
+
+# Methodology
+
+Data Preparation
+
+Loaded and cleaned historical price data
+
+Engineered lagged features for time series modeling
+
+Scaled features and target variable for model compatibility
 
 Modeling Approach
 
-Evaluation Metrics
+Linear Regression: Modeled the primary linear trends in the closing price
 
-Results
+LSTM Neural Network: Trained on the residuals (errors) from the linear model to capture nonlinear patterns
 
-How to Run
+Hybrid Model: Combined predictions from both models for final forecasts
 
-Dependencies
+Evaluation
 
-Acknowledgments
+Assessed model performance using RMSE, MAE, and MAPE
 
-# Objective
-Build a hybrid model for short-term prediction of Apple’s closing stock price.
+Visualized actual vs. predicted closing prices over the test period
 
-Combine Linear Regression (for linear trends) and LSTM (for nonlinear, sequential patterns).
+# Findings
+The hybrid model achieved strong predictive accuracy, with the following metrics on the test set:
 
-Assess whether the hybrid model outperforms individual models.
+RMSE: 1.23
 
-# Data
-Source: Historical daily price data for Apple Inc. (AAPL).
+MAE: 1.01
 
-# Features: 
+MAPE: 3.45%
 
-Date, Open, High, Low, Close, Volume.
+As shown in the figure below, the hybrid model’s predictions (orange dashed line) closely track the actual closing prices (blue line), even during periods of volatility and trend shifts.
 
-# Preprocessing:
+The model effectively captures both long-term trends and short-term fluctuations, demonstrating the value of combining classical and deep learning approaches for financial forecasting.
 
-Dates parsed to datetime format.
+# Conclusion
 
-Data sorted by date.
+This project demonstrates that a hybrid machine learning approach can deliver robust and accurate short-term forecasts for Apple’s stock price. The combination of Linear Regression and LSTM enables the model to capture both linear and nonlinear dynamics in the data, outperforming standalone models. This methodology is adaptable to other stocks and financial time series, offering significant potential for real-world trading and investment strategies.
 
-Missing values handled as needed.
+# How to Use
+Clone the repository and install required dependencies (see requirements.txt).
 
-Features scaled using MinMaxScaler for neural network compatibility.
+Run the Jupyter notebook to reproduce the analysis, modeling, and visualizations.
 
-# Project Workflow
+Adjust the code to apply the hybrid modeling approach to other stocks or time series datasets.
 
-Data Loading
+Future Work
+Incorporate additional features such as technical indicators, macroeconomic data, or news sentiment
 
-Import CSV data and parse dates.
+Experiment with alternative neural network architectures (e.g., GRU, Transformer)
 
-Sort and reset index for time series continuity.
+Extend the approach to multi-step and long-term forecasting
 
-Data Cleaning
+Author
+Silumko Mbetha 
+Data Scientist | Financial Modeling Enthusiast
 
-Check for and handle missing values.
+For questions or collaboration opportunities, please contact me via Email:sdmbetha2@gmail.com or [LinkedIn]](https://www.linkedin.com/in/silumko-mbetha-98931b2b8/).
 
-Visualize data trends and distributions.
 
-Feature Engineering
 
-Select relevant features (Open, High, Low, Close, Volume).
 
-Scale features for LSTM input.
 
-Model Development
 
-Linear Regression: Fit model to capture linear patterns in closing prices.
 
-LSTM: Train on Linear Regression residuals to model nonlinear dependencies.
-
-Hybrid Model Construction
-
-Combine Linear Regression predictions with LSTM predictions on residuals to generate final forecast.
-
-Model Evaluation
-
-Compare hybrid model performance with standalone Linear Regression and LSTM models using standard regression metrics.
-
-# Modeling Approach
-Linear Regression: Captures overall trend and linear relationships in the data.
-
-LSTM Neural Network: Models complex, nonlinear, and sequential dependencies in the residuals left by the Linear Regression.
-
-Hybrid Model: Final prediction is the sum of Linear Regression output and LSTM-predicted residuals, leveraging strengths of both approaches.
-
-# Evaluation Metrics
-Mean Squared Error (MSE)
-
-Mean Absolute Error (MAE)
-
-Mean Absolute Percentage Error (MAPE)
-
-These metrics are used to assess and compare the predictive accuracy of each model component and the hybrid model.
-
-# Results
-The hybrid model demonstrates improved accuracy over standalone models by effectively capturing both linear and nonlinear patterns in the stock price data.
-
-Visualizations and error metrics are provided in the notebook to illustrate performance gains.
-
-# How to Run
-Clone the Repository and navigate to the project directory.
-
-Install Dependencies (see below).
-
-Download the Data: Ensure the AAPL.csv file is in the specified path.
-
-Run the Notebook: Open Apple-StockPrice-Predictions.ipynb in Jupyter Notebook or compatible environment and execute cells sequentially.
-
-Dependencies
-Python 3.x
-
-pandas
-
-numpy
-
-matplotlib
-
-seaborn
-
-scikit-learn
-
-tensorflow / keras
-
-Install dependencies using pip:
-
-bash
-pip install pandas numpy matplotlib seaborn scikit-learn tensorflow
-Acknowledgments
-Historical Apple stock data sourced from public financial datasets.
-
-LSTM and hybrid modeling inspired by contemporary time series forecasting research.
-
-For questions or contributions, please open an issue or submit a pull request.
