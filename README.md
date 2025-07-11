@@ -73,7 +73,7 @@ Author
 Silumko Mbetha 
 Data Scientist | Financial Modeling Enthusiast
 
-For questions or collaboration opportunities, please contact me via Email:sdmbetha2@gmail.com or [LinkedIn]](https://www.linkedin.com/in/silumko-mbetha-98931b2b8/).
+For questions or collaboration opportunities, please contact me via Email: sdmbetha2@gmail.com or [LinkedIn]](https://www.linkedin.com/in/silumko-mbetha-98931b2b8/).
 
 
 
